@@ -1,0 +1,79 @@
+// C PROGRAM TO CONVERT CELCIUS , KELVIN AND FAHRENHEIT TAKEN AS INPUT AND CONVERT THEM INTO DIFFERENT SCALE
+
+#include <stdio.h>
+
+void convertTemperature(float temp, char scale) {
+    float celsius, fahrenheit, kelvin;
+
+    switch (scale) {
+        case 'C':
+        case 'c':
+            celsius = temp;
+            fahrenheit = (celsius * 9 / 5) + 32;
+            kelvin = celsius + 273.15;
+            printf("Celsius: %.2f\nFahrenheit: %.2f\nKelvin: %.2f\n", celsius, fahrenheit, kelvin);
+            break;
+
+        case 'F':
+        case 'f':
+            fahrenheit = temp;
+            celsius = (fahrenheit - 32) * 5 / 9;
+            kelvin = celsius + 273.15;
+            printf("Celsius: %.2f\nFahrenheit: %.2f\nKelvin: %.2f\n", celsius, fahrenheit, kelvin);
+            break;
+
+        case 'K':
+        case 'k':
+            kelvin = temp;
+            celsius = kelvin - 273.15;
+            fahrenheit = (celsius * 9 / 5) + 32;
+            printf("Celsius: %.2f\nFahrenheit: %.2f\nKelvin: %.2f\n", celsius, fahrenheit, kelvin);
+            break;
+
+        default:
+            printf("Invalid scale. Please use C, F, or K.\n");
+    }
+}
+
+int main() {
+    float temperature;
+    char scale;
+
+    printf("Enter the temperature: ");
+    scanf("%f", &temperature);
+    printf("Enter the scale (C for Celsius, F for Fahrenheit, K for Kelvin): ");
+    scanf(" %c", &scale);
+
+    convertTemperature(temperature, scale);
+
+    return 0;
+}
+
+Explanation
+
+    Function Definition:
+        The convertTemperature function takes two parameters: the temperature value and the scale (C, F, or K).
+        It uses a switch statement to determine the conversion based on the input scale.
+
+    Conversions:
+        Celsius to Fahrenheit and Kelvin:
+            ( F = (C \times \frac{9}{5}) + 32 )
+            ( K = C + 273.15 )
+        Fahrenheit to Celsius and Kelvin:
+            ( C = (F - 32) \times \frac{5}{9} )
+            ( K = C + 273.15 )
+        Kelvin to Celsius and Fahrenheit:
+            ( C = K - 273.15 )
+            ( F = (C \times \frac{9}{5}) + 32 )
+
+    User Input:
+        The program prompts the user to enter a temperature and its scale.
+        It reads the temperature as a float and the scale as a character.
+
+    Output:
+        The converted temperatures are displayed with two decimal precision.
+
+Usage
+
+    Compile the program using a C compiler (e.g., gcc temp_converter.c -o temp_converter).
+    Run the executable to start the temperature conversion.
