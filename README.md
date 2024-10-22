@@ -1,3 +1,4 @@
+![task2 c - coding - Visual Studio Code 22-10-2024 22_58_22](https://github.com/user-attachments/assets/a7e51615-d5af-4975-9c14-6655f84d0347)
 **NAME**  KUNDAN KUMAR
 **COMPANY** CODTECH IT SOLUTIONS
 **Domain** C PROGRAMMING
